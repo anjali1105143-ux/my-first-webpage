@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Details Form</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #f8f9fb;
+      color: #555;
+    }
+
+    .container {
+      max-width: 650px;
+      margin: 20px auto;
+      padding: 25px;
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 12px;
+    }
+
+    .field {
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      font-size: 21px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    input {
+      width: 100%;
+      padding: 22px 20px;
+      font-size: 19px;
+      border: 2px solid #e2e2e2;
+      border-radius: 18px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #2864e8;
+    }
+
+    button {
+      width: 100%;
+      padding: 23px 12px;
+      border: none;
+      border-radius: 18px;
+      background: #2864e8;
+      color: white;
+      font-size: 23px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #message {
+      margin-top: 18px;
+      text-align: center;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 18px;
+      }
+
+      label {
+        font-size: 18px;
+      }
+
+      input {
+        font-size: 17px;
+        padding: 19px 15px;
+      }
+
+      button {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form id="studentForm">
+      <div class="field">
+        <label for="name">Full Name</label>
+        <input id="name" name="name"
+          type="text" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="field">
+        <label for="roll">Roll Number</label>
+        <input id="roll" name="roll"
+          type="text" placeholder="Enter your roll number" required>
+      </div>
+
+      <div class="field">
+        <label for="studentId">Student ID</label>
+        <input id="studentId" name="studentId"
+          type="text" placeholder="Enter your student ID" required>
+      </div>
+
+      <div class="field">
+        <label for="email">Email Address</label>
+        <input id="email" name="email"
+          type="email" placeholder="Enter your email" required>
+      </div>
+
+      <button type="submit">Submit Details</button>
+      <p id="message" role="status"></p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("studentForm")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        document.getElementById("message").textContent =
+          "Form validated successfully!";
+      });
+  </script>
+</body>
+</html>
